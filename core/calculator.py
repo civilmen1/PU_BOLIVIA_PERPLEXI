@@ -1,30 +1,18 @@
-﻿from .models import Insumo, APU, Actividad, Proyecto
+﻿from .models import Insumo, APU
 from typing import List
 
 def crear_insumo(tipo, codigo, descripcion, unidad, cantidad, precio_unitario, desperdicio=0.0) -> Insumo:
-    return Insumo(
-        tipo=tipo,
-        codigo=codigo,
-        descripcion=descripcion,
-        unidad=unidad,
-        cantidad=cantidad,
-        precio_unitario=precio_unitario,
-        desperdicio=desperdicio
-    )
+    return Insumo(tipo=tipo, codigo=codigo, descripcion=descripcion,
+                  unidad=unidad, cantidad=cantidad, precio_unitario=precio_unitario,
+                  desperdicio=desperdicio)
 
 def crear_apu(codigo, descripcion, unidad, insumos: List[Insumo],
               gastos_generales_pct=0.10, utilidad_pct=0.10,
               impuesto_it_pct=0.03, impuesto_iva_pct=0.0) -> APU:
-    return APU(
-        codigo=codigo,
-        descripcion=descripcion,
-        unidad=unidad,
-        insumos=insumos,
-        gastos_generales_pct=gastos_generales_pct,
-        utilidad_pct=utilidad_pct,
-        impuesto_it_pct=impuesto_it_pct,
-        impuesto_iva_pct=impuesto_iva_pct
-    )
+    return APU(codigo=codigo, descripcion=descripcion, unidad=unidad,
+               insumos=insumos, gastos_generales_pct=gastos_generales_pct,
+               utilidad_pct=utilidad_pct, impuesto_it_pct=impuesto_it_pct,
+               impuesto_iva_pct=impuesto_iva_pct)
 
 def resumen_apu(apu: APU) -> dict:
     return {

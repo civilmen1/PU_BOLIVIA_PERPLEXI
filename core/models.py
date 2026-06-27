@@ -3,7 +3,7 @@ from typing import List
 
 @dataclass
 class Insumo:
-    tipo: str  # 'material', 'mano_obra', 'equipo'
+    tipo: str
     codigo: str
     descripcion: str
     unidad: str
